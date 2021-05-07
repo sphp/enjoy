@@ -1,0 +1,1177 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Elite Video Player - jQuery plugin</title>
+	
+	<meta name="description" content="">
+	<meta name="author" content="CreativeMedia">
+	<meta name="copyright" content="CreativeMedia">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2018-09-19T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='easeOutSine';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#EDF6EE;color:#412E28;}
+		::-moz-selection{background:#2B2302;color:#B3204D;}
+		::selection{background:#2B2302;color:#B3204D;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_12.png);}
+		a{color:#B3204D;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -ms-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -webkit-gradient(linear, 0 0, 0 B3204D%, from(#261F02), to(#7D1636));
+			  background-image: -webkit-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: -o-linear-gradient(top, #B3204D, #7D1636);
+			  background-image: linear-gradient(top, #B3204D, #7D1636);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B3204D', endColorstr='#7D1636', GradientType=0);
+			  border-color: #7D1636 #7D1636 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #B3204D #B3204D #bfbfbf;
+		  background-color: #7D1636;
+		}
+		hr{border-top:1px solid #DBE3DC;border-bottom:1px solid #F6FFF7;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#261F02;color:#EDF6EE;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #382E03;-moz-text-shadow:1px 1px 0px #382E03;text-shadow:1px 1px 0px #382E03;}
+		#documenter_sidebar ul{border-top:1px solid #0F0C01;}
+		#documenter_sidebar ul a{border-top:1px solid #382E03;border-bottom:1px solid #0F0C01;color:#EDF6EE;}
+		#documenter_sidebar ul a:hover{background:#2B2302;color:#B3204D;border-top:1px solid #2B2302;}
+		#documenter_sidebar ul a.current{background:#2B2302;color:#B3204D;border-top:1px solid #2B2302;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-elite-video-player">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#elite_video_player_main_features" title="Elite Video Player main features">Elite Video Player main features</a></li>
+			<li><a href="#directory_and_files_explanation" title="Directory and files explanation">Directory and files explanation</a></li>
+			<li><a href="#how_to_use_player_options" title="How to use / player options">How to use / player options</a></li>
+			<li><a href="#adding_video_player_to_your_webpage" title="Adding video player to your webpage">Adding video player to your webpage</a></li>
+			<li><a href="#google_analytics" title="Google Analytics">Google Analytics</a></li>
+			<li><a href="#youtube_playlist" title="YouTube playlist">YouTube playlist</a></li>
+			<li><a href="#youtube_user_channel" title="YouTube user channel">YouTube user channel</a></li>
+			<li><a href="#adding_videos_to_playlist_manually" title="Adding videos to playlist (manually)">Adding videos to playlist (manually)</a></li>
+			<li><a href="#html5_self_hosted_video_formats_mp4" title="HTML5 Self-hosted video formats (mp4)">HTML5 Self-hosted video formats (mp4)</a></li>
+			<li><a href="#pre_roll_advertising" title="Pre-roll advertising">Pre-roll advertising</a></li>
+			<li><a href="#mid_roll_advertising" title="Mid-roll advertising">Mid-roll advertising</a></li>
+			<li><a href="#post_roll_advertising" title="Post-Roll advertising">Post-Roll advertising</a></li>
+			<li><a href="#pop_up_advertising" title="Pop-Up advertising">Pop-Up advertising</a></li>
+			<li><a href="#customize_look" title="Customize look">Customize look</a></li>
+			<li><a href="#multiple_instances_of_player" title="Multiple instances of player">Multiple instances of player</a></li>
+			<li><a href="#special_notes" title="Special notes">Special notes</a></li>
+			<li><a href="#rate_the_item" title="Rate the item">Rate the item</a></li>
+			<li><a href="#more_works_by_creativemedia" title="More works by CreativeMedia">More works by CreativeMedia</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright CreativeMedia 2018<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Elite Video Player</h1>
+	<h2>jQuery plugin</h2>
+	<div id="documenter_buttons">
+		<a href="http://codecanyon.net/user/_creativemedia_#contact" class="btn btn-primary btn-large">Email me</a> <a href="http://codecanyon.net/user/_creativemedia_/portfolio" class="btn btn-large">CodeCanyon portfolio</a> <a href="http://activeden.net/user/_creativemedia_/portfolio" class="btn btn-large">ActiveDen portfolio</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 08/01/2014</li>
+	<li>latest update: 09/19/2018</li>
+	<li>by: CreativeMedia</li>
+	<li><a href="http://codecanyon.net/user/_creativemedia_">codecanyon.net/user/_creativemedia_</a></li>
+	
+	</ul>
+	<p>Thank you for purchasing my item. If you have any questions that are beyond the scope of this help file, please feel free to email me via our user page contact form on CodeCanyon. Thanks so much!</p>
+	</section>
+	
+	<section id="elite_video_player_main_features">
+	<div class="page-header"><h3>Elite Video Player main features</h3><hr class="notop"></div>
+<p>
+	This is HTML5 ready video player that plays videos from YouTube, Vimeo and self hosted videos (mp4) with optional pre-roll, &nbsp;mid-roll, post-roll and pop-up advertising system for each video you create.</p>
+<p>
+	Player supports gallery (with unlimited videos) which can be on right side or turned off.&nbsp;</p>
+<p>
+	You can add videos to playlist manually or automatically (from youtube playlist or youtube user channel).</p>
+</section>
+<section id="directory_and_files_explanation">
+	<div class="page-header"><h3>Directory and files explanation</h3><hr class="notop"></div>
+<p>	Inside the download zip from CodeCanyon you&#39;ll find the following structure:<br>
+	<br>
+	<img alt="" src="assets/images/image_8.jpg" style="width: 339px; height: 126px;"><br>
+	<br>
+	<strong>deploy</strong> - containes &quot;minified&quot; versions of all scripts (js/css). This means the scripts/css files have been compressed so they load faster.<br>
+	<br>
+	<strong>documentation</strong> - containes documentation files<br>
+	<br>
+	<strong>source</strong> - containes original versions of all scripts (js/css).Identical to &quot;deploy&quot; folder except nothing is minified. If you wish to change css and javascript files use this folder. After making changes, for faster loading you can minify the CSS/JS files by using the following tools:<br>
+	<br>
+	JS: http://closure-compiler.appspot.com/home<br>
+	CSS: http://www.refresh-sf.com/yui/</p>
+<p>	&nbsp;</p>
+</section>
+<section id="how_to_use_player_options">
+	<div class="page-header"><h3>How to use / player options</h3><hr class="notop"></div>
+<p>	Open <strong>index.html</strong> file from the &quot;<strong>deploy</strong>&quot; folder.</p>
+<p>	Video player only needs few lines of code to get started:</p>
+<pre class="prettyprint lang-html linenums">
+$(document).ready(function($)
+ {
+    videoPlayer = $(&quot;#Elite_video_player&quot;).Video();
+ });</pre>
+<p>	But you can also override the default settings by passing the arguments.</p>
+<p>	Below is example of calling the plugin with explanation of arguments (all plugin options) and added 1 video to the playlist:</p>
+<pre class="prettyprint lang-html linenums">
+$(document).ready(function($)
+{
+videoPlayer = $(&quot;#Elite_video_player&quot;).Video({   //ALL PLUGIN OPTIONS
+googleAnalyticsTrackingCode: &quot;UA-87467628-3&quot;,//track video events using Google Analytics (how may times video is played, downloaded, etc.)
+instanceName:&quot;player1&quot;,                      //name of the player instance
+instanceTheme:&quot;dark&quot;,                        //choose video player theme: &quot;dark&quot;, &quot;light&quot;
+autohideControls:5,                          //autohide HTML5 player controls
+hideControlsOnMouseOut:&quot;No&quot;,                 //hide HTML5 player controls on mouse out of the player: &quot;Yes&quot;,&quot;No&quot;
+playerLayout: &quot;fitToContainer&quot;,              //Select player layout: &quot;fitToContainer&quot; (responsive mode), &quot;fixedSize&quot; (fixed mode), &quot;fitToBrowser&quot; (fill the browser mode)
+videoPlayerWidth:1006,                       //fixed total player width (only for playerLayout: &quot;fixedSize&quot;)
+videoPlayerHeight:420,                       //fixed total player height (only for playerLayout: &quot;fixedSize&quot;)
+videoRatio: 16/9,                            //set your video ratio (calculate video width/video height)
+videoRatioStretch: false,                    //adjust video ratio for case when playlist is &quot;opened&quot; : true/false
+iOSPlaysinline: true,                        //on iOS device: play videos inline (like on desktop) or in Fullscreen by default: true/false
+floatPlayerOutsideViewport: false,           //show Sticky player if video player is not in viewport when scrolling through page
+lightBox:false,                              //lightbox mode :true/false
+lightBoxAutoplay: false,                     //autoplay video when lightbox opens: true/false
+lightBoxThumbnail:&quot;images/preview_images/poster.jpg&quot;, //lightbox thumbnail image
+lightBoxThumbnailWidth: 400,                 //lightbox thumbnail image width
+lightBoxThumbnailHeight: 220,                //lightbox thumbnail image height
+lightBoxCloseOnOutsideClick: true,           //close lightbox when clicked outside of player area
+playlist:&quot;Right playlist&quot;,                   //choose playlist type: &quot;Right playlist&quot;, &quot;Bottom playlist&quot;, &quot;Off&quot;
+playlistScrollType:&quot;light&quot;,                  //choose scrollbar type: &quot;light&quot;,&quot;minimal&quot;,&quot;light-2&quot;,&quot;light-3&quot;,&quot;light-thick&quot;,&quot;light-thin&quot;,&quot;inset&quot;,&quot;inset-2&quot;,&quot;inset-3&quot;,&quot;rounded&quot;,&quot;rounded-dots&quot;,&quot;3d&quot;,&quot;dark&quot;,&quot;minimal-dark&quot;,&quot;dark-2&quot;,&quot;dark-3&quot;,&quot;dark-thick&quot;,&quot;dark-thin&quot;,&quot;inset-dark&quot;,&quot;inset-2-dark&quot;,&quot;inset-3-dark&quot;,&quot;rounded-dark&quot;,&quot;rounded-dots-dark&quot;,&quot;3d-dark&quot;,&quot;3d-thick-dark&quot;
+playlistBehaviourOnPageload:&quot;opened (default)&quot;,//choose playlist behaviour when webpage loads: &quot;closed&quot;, &quot;opened (default)&quot; (not apply to Vimeo player)
+autoplay:false,                              //autoplay when webpage loads: true/false
+colorAccent:&quot;#cc181e&quot;,                       //plugin colors accent (hexadecimal or RGB value - http://www.colorpicker.com/)
+vimeoColor:&quot;00adef&quot;,                         //set &quot;hexadecimal value&quot;, default vimeo color is &quot;00adef&quot;
+youtubeControls:&quot;custom controls&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span> //choose youtube player controls: &quot;custom controls&quot;, &quot;default controls&quot;
+youtubeSkin:&quot;dark&quot;,                          //default youtube controls theme: light, dark
+youtubeColor:&quot;red&quot;,                          //default youtube controls bar color: red, white
+youtubeQuality:&quot;default&quot;,                    //choose youtube quality: &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;, &quot;hd720&quot;, &quot;hd1080&quot;, &quot;highres&quot;, &quot;default&quot;
+youtubeShowRelatedVideos:&quot;Yes&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span>             //choose to show youtube related videos when video finish: &quot;Yes&quot;, &quot;No&quot; (onFinish:&quot;Stop video&quot; needs to be enabled)
+videoPlayerShadow:&quot;effect1&quot;,                 //choose player shadow:  &quot;effect1&quot; , &quot;effect2&quot;, &quot;effect3&quot;, &quot;effect4&quot;, &quot;effect5&quot;, &quot;effect6&quot;, &quot;off&quot;
+loadRandomVideoOnStart:&quot;No&quot;,                 //choose to load random video when webpage loads: &quot;Yes&quot;, &quot;No&quot;
+shuffle:&quot;No&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span>                               //choose to shuffle videos when playing one after another: &quot;Yes&quot;, &quot;No&quot; (shuffle button enabled/disabled on start)
+posterImg:&quot;images/preview_images/poster.jpg&quot;,//player poster image
+posterImgOnVideoFinish:&quot;images/preview_images/poster2.jpg&quot;,//player poster image on video finish (if enabled onFinish:&quot;Stop video&quot;)
+onFinish:&quot;Play next video&quot;,                  //&quot;Play next video&quot;,&quot;Restart video&quot;, &quot;Stop video&quot;,
+nowPlayingText:&quot;Yes&quot;,                        //enable disable now playing title: &quot;Yes&quot;,&quot;No&quot;
+fullscreen:&quot;Fullscreen native&quot;,              //choose fullscreen type: &quot;Fullscreen native&quot;,&quot;Fullscreen browser&quot;
+preloadSelfHosted:&quot;none&quot;,                    //choose preload buffer for self hosted mp4 videos (video type HTML5): &quot;none&quot;, &quot;auto&quot;
+rightClickMenu:true,                         //enable/disable right click over HTML5 player: true/false
+hideVideoSource:false,<span class="Apple-tab-span" style="white-space:pre"> </span> //option to hide self hosted video sources (to prevent users from download/steal your videos): true/false
+showAllControls:true,<span class="Apple-tab-span" style="white-space:pre"> </span> //enable/disable all HTML5 player controls: true/false
+allowSkipAd:true,                            //enable/disable &quot;Skip advertisement&quot; option: true/false
+infoShow:&quot;Yes&quot;,                              //enable/disable info option: &quot;Yes&quot;,&quot;No&quot;
+shareShow:&quot;Yes&quot;,                             //enable/disable all share options: &quot;Yes&quot;,&quot;No&quot;
+facebookShow:&quot;Yes&quot;,                          //enable/disable facebook option individually: &quot;Yes&quot;,&quot;No&quot;
+twitterShow:&quot;Yes&quot;,                           //enable/disable twitter option individually: &quot;Yes&quot;,&quot;No&quot;
+mailShow:&quot;Yes&quot;,                              //enable/disable mail option individually: &quot;Yes&quot;,&quot;No&quot;
+facebookShareName:&quot;Elite video player&quot;,      //first parametar of facebook share in facebook feed dialog is title
+facebookShareLink:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;,  //second parametar of facebook share in facebook feed dialog is link below title
+facebookShareDescription:&quot;Elite Video Player is stunning, modern, responsive, fully customisable high-end video player for WordPress that support advertising and the most popular video platforms like YouTube, Vimeo or self-hosting videos (mp4).&quot;, //third parametar of facebook share in facebook feed dialog is description below link
+facebookSharePicture:&quot;https://0.s3.envato.com/files/123866118/preview.jpg&quot;, //fourth parametar in facebook feed dialog is picture on left side
+twitterText:&quot;Elite video player&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span> //first parametar of twitter share in twitter feed dialog is text
+twitterLink:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;, //second parametar of twitter share in twitter feed dialog is link
+twitterHashtags:&quot;wordpressvideoplayer&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span> //third parametar of twitter share in twitter feed dialog is hashtag
+twitterVia:&quot;Creative media&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span> //fourth parametar of twitter share in twitter feed dialog is via (@)
+googlePlus:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;, //share link over Google +
+logoShow:&quot;Yes&quot;,                              //&quot;Yes&quot;,&quot;No&quot;
+logoClickable:&quot;Yes&quot;,                         //&quot;Yes&quot;,&quot;No&quot;
+logoPath:&quot;images/logo/logo.png&quot;,             //path to logo image
+logoGoToLink:&quot;http://codecanyon.net/&quot;,       //redirect to page when logo clicked
+logoPosition:&quot;bottom-left&quot;,                  //choose logo position: &quot;bottom-right&quot;,&quot;bottom-left&quot;
+embedShow:&quot;Yes&quot;,                             //enable/disable embed option: &quot;Yes&quot;,&quot;No&quot;
+embedCodeSrc:&quot;www.yourwebsite.com/videoplayer/index.html&quot;, //path to your video player on server
+embedCodeW:&quot;746&quot;,                            //embed player code width
+embedCodeH:&quot;420&quot;,                            //embed player code height
+embedShareLink:&quot;www.yourwebsite.com/videoplayer/index.html&quot;, //direct link to your site (or any other URL) you want to be &quot;shared&quot;
+showGlobalPrerollAds: false,                 //enable/disable &#39;global&#39; ads and overwrite each individual ad in &#39;videos&#39; :true/false
+globalPrerollAds: &quot;url1;url2;url3;url4;url5&quot;,//set &#39;pool&#39; of url&#39;s that are separated by ; (global prerolls will play randomly)
+globalPrerollAdsSkipTimer: 5,                //skip global advertisement seconds
+globalPrerollAdsGotoLink: &quot;http://codecanyon.net/&quot;,//global advertisement goto link
+<span style="font-size: 12px;">advertisementTitle:&quot;Advertisement&quot;,          //translate &quot;Advertisement&quot; title to your language</span>
+<span style="font-size: 12px;">skipAdvertisementText:&quot;Skip advertisement&quot;,  //translate &quot;Skip advertisement&quot; button to your language</span>
+<span style="font-size: 12px;">skipAdText:&quot;You can skip this ad in&quot;,        //translate &quot;You can skip this ad in&quot; counter to your language</span>
+<span style="font-size: 12px;">playBtnTooltipTxt:&quot;Play&quot;,                    //translate &quot;Play&quot; to your language</span>
+pauseBtnTooltipTxt:&quot;Pause&quot;,                  //translate &quot;Pause&quot; to your language
+rewindBtnTooltipTxt:&quot;Rewind&quot;,                //translate &quot;Rewind&quot; to your language
+downloadVideoBtnTooltipTxt:&quot;Download video&quot;, //translate &quot;Download video&quot; to your language
+qualityBtnOpenedTooltipTxt:&quot;Close settings&quot;, //translate &quot;Close settings&quot; to your language
+qualityBtnClosedTooltipTxt:&quot;Settings&quot;,       //translate &quot;Settings&quot; to your language
+muteBtnTooltipTxt:&quot;Mute&quot;,                    //translate &quot;Mute&quot; to your language
+unmuteBtnTooltipTxt:&quot;Unmute&quot;,                //translate &quot;Unmute&quot; to your language
+fullscreenBtnTooltipTxt:&quot;Fullscreen&quot;,        //translate &quot;Fullscreen&quot; to your language
+exitFullscreenBtnTooltipTxt:&quot;Exit fullscreen&quot;,//translate &quot;Exit fullscreen&quot; to your language
+infoBtnTooltipTxt:&quot;Show info&quot;,<span class="Apple-tab-span" style="white-space:pre"> </span> //translate &quot;Show info&quot; to your language
+embedBtnTooltipTxt:&quot;Embed&quot;,                  //translate &quot;Embed&quot; to your language
+shareBtnTooltipTxt:&quot;Share&quot;,                  //translate &quot;Share&quot; to your language
+volumeTooltipTxt:&quot;Volume&quot;,                   //translate &quot;Volume&quot; to your language
+playlistBtnClosedTooltipTxt:&quot;Show playlist&quot;, //translate &quot;Show playlist&quot; to your language
+playlistBtnOpenedTooltipTxt:&quot;Hide playlist&quot;, //translate &quot;Exit fullscreen&quot; to your language
+facebookBtnTooltipTxt:&quot;Share on Facebook&quot;,   //translate &quot;Share on Facebook&quot; to your language
+twitterBtnTooltipTxt:&quot;Share on Twitter&quot;,     //translate &quot;Share on Twitter&quot; to your language
+googlePlusBtnTooltipTxt:&quot;Share on Google+&quot;,  //translate &quot;Share on Google+&quot; to your language
+lastBtnTooltipTxt:&quot;Go to last video&quot;,        //translate &quot;Go to last video&quot; to your language
+firstBtnTooltipTxt:&quot;Go to first video&quot;,      //translate &quot;Go to first video&quot; to your language
+nextBtnTooltipTxt:&quot;Play next video&quot;,         //translate &quot;Play next video&quot; to your language
+previousBtnTooltipTxt:&quot;Play previous video&quot;, //translate &quot;Play previous video&quot; to your language
+shuffleBtnOnTooltipTxt:&quot;Shuffle on&quot;,         //translate &quot;Shuffle on&quot; to your language
+shuffleBtnOffTooltipTxt:&quot;Shuffle off&quot;,       //translate &quot;Shuffle off&quot; to your language
+nowPlayingTooltipTxt:&quot;NOW PLAYING&quot;,          //translate &quot;NOW PLAYING&quot; to your language
+embedWindowTitle1:&quot;SHARE THIS PLAYER:&quot;,      //translate &quot;SHARE THIS PLAYER:&quot; to your language
+embedWindowTitle2:&quot;EMBED THIS VIDEO IN YOUR SITE:&quot;,//translate &quot;EMBED THIS VIDEO IN YOUR SITE:&quot; to your language
+embedWindowTitle3:&quot;SHARE LINK TO THIS PLAYER:&quot;,//translate &quot;SHARE LINK TO THIS PLAYER:&quot; to your language
+youtubePlaylistID:&quot;&quot;,                        //automatic youtube playlist ID (leave blank &quot;&quot; if you want to use manual playlist) LL4qbSRobYCjvwo4FCQFrJ4g
+youtubeChannelID:&quot;&quot;,                         //automatic youtube channel ID (leave blank &quot;&quot; if you want to use manual playlist) UCHqaLr9a9M7g9QN6xem9HcQ
+
+//manual playlist
+videos:[
+{
+videoType:&quot;youtube&quot;,                                                              //choose video type: &quot;HTML5&quot;, &quot;youtube&quot;, &quot;vimeo&quot;, &quot;image&quot;
+title:&quot;Youtube video&quot;,                                                            //video title
+youtubeID:&quot;0dJO0HyE8xE&quot;,                                                          //last part if the URL https://www.youtube.com/watch?v=0dJO0HyE8xE
+vimeoID:&quot;119641053&quot;,                                                              //last part of the URL http://vimeo.com/119641053
+mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;,               //HTML5 video mp4 url
+enable_mp4_download:&quot;no&quot;,                                                         //enable download button for self hosted videos: &quot;yes&quot;,&quot;no&quot;
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;,                                     //display image instead of playing video
+imageTimer:4, <span class="Apple-tab-span" style="white-space:pre"> </span>  //set time how long image will display
+prerollAD:&quot;no&quot;,                                                                   //show pre-roll &quot;yes&quot;,&quot;no&quot;
+prerollGotoLink:&quot;http://codecanyon.net/&quot;,                                         //pre-roll goto link
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,   //pre-roll video mp4 format
+prerollSkipTimer:5,
+midrollAD:&quot;no&quot;,                                                                   //show mid-roll &quot;yes&quot;,&quot;no&quot;
+midrollAD_displayTime:&quot;00:10&quot;,                                                    //show mid-roll at any custom time in format &quot;minutes:seconds&quot; (&quot;00:00&quot;)
+midrollGotoLink:&quot;http://codecanyon.net/&quot;,                                         //mid-roll goto link
+midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;, //mid-roll video mp4 format
+midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space:pre"> </span>
+postrollAD:&quot;no&quot;,                                                                  //show post-roll &quot;yes&quot;,&quot;no&quot;
+postrollGotoLink:&quot;http://codecanyon.net/&quot;,                                        //post-roll goto link
+postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,  //post-roll video mp4 format
+postrollSkipTimer:5,
+popupImg:&quot;images/preview_images/popup.jpg&quot;,                        <span class="Apple-tab-span" style="white-space:pre"> </span>  <span class="Apple-tab-span" style="white-space:pre"> </span>           //popup image URL
+popupAdShow:&quot;no&quot;,                                                                 //enable/disable popup image: &quot;yes&quot;,&quot;no&quot;
+popupAdStartTime:&quot;00:03&quot;,                                                         //time to show popup ad during playback
+popupAdEndTime:&quot;00:07&quot;,                                                           //time to hide popup ad during playback
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                                         //re-direct to URL when popup ad clicked
+description:&quot;Video description goes here.&quot;,                                       //video description
+thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,                                      //set &quot;auto&quot; or leave blank &quot;&quot; to grab it automatically from youtube, or set path to playlist thumbnail image
+info:&quot;Video info goes here.&lt;br&gt;This text can be &lt;i&gt;HTML formatted&lt;/i&gt;, &lt;a href=&#39;http://codecanyon.net/user/_zac_&#39; target=&#39;_blank&#39;&gt;&lt;font color=&#39;008BFF&#39;&gt;find out more&lt;/font&gt;&lt;/a&gt;.&lt;br&gt;You can disable this info window in player options. &lt;br&gt;&lt;br&gt;Lorem ipsum dolor sit amet, eu pri dolores theophrastus. Posidonium vituperatoribus cu mel, cum feugiat nostrum sapientem ne. Vis ea summo persius, unum velit erant in eos, pri ut suas iriure euripidis. Ad augue expetendis sea. Ne usu saperet appetere honestatis, ne qui nulla debitis sententiae.&quot;                                                                                    //video info
+}
+]
+});
+});</pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="adding_video_player_to_your_webpage">
+	<div class="page-header"><h3>Adding video player to your webpage</h3><hr class="notop"></div>
+<ul>	<li>		Copy all from the <strong>deploy</strong> folder to server</li>
+	<li>		Insert following code in between <strong>&lt;head&gt;......&lt;/head&gt;</strong> of your web document (<strong>code from index.html file</strong>)</li>
+</ul>
+<pre class="prettyprint lang-html linenums">
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Elite Video Player&quot;/&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Elite Video Player by _zac_&quot;/&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;http://creativeinteractivemedia.com/player/imgFB/elite.png&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/elite.css&quot; type=&quot;text/css&quot; media=&quot;screen&quot;/&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/elite-font-awesome.css&quot; type=&quot;text/css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.mCustomScrollbar.css&quot; type=&quot;text/css&quot;&gt;
+&lt;script src=&quot;https://code.jquery.com/jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/hls.js@latest&quot;&gt;&lt;/script&gt;
+<span style="font-size: 12px;">&lt;script src=&quot;js/froogaloop.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</span>
+&lt;script src=&quot;js/jquery.mCustomScrollbar.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/THREEx.FullScreen.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/videoPlayer.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/Playlist.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/ZeroClipboard.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+
+$(document).ready(function($)
+{
+videoPlayer = $(&quot;#Elite_video_player&quot;).Video({   //ALL PLUGIN OPTIONS
+googleAnalyticsTrackingCode: &quot;UA-87467628-3&quot;,//track video events using Google Analytics (how may times video is played, downloaded, etc.)
+instanceName:&quot;player1&quot;,                      //name of the player instance
+instanceTheme:&quot;dark&quot;,                        //choose video player theme: &quot;dark&quot;, &quot;light&quot;
+autohideControls:5,                          //autohide HTML5 player controls
+hideControlsOnMouseOut:&quot;No&quot;,                 //hide HTML5 player controls on mouse out of the player: &quot;Yes&quot;,&quot;No&quot;
+playerLayout: &quot;fitToContainer&quot;,              //Select player layout: &quot;fitToContainer&quot; (responsive mode), &quot;fixedSize&quot; (fixed mode), &quot;fitToBrowser&quot; (fill the browser mode)
+videoPlayerWidth:1006,                       //fixed total player width (only for playerLayout: &quot;fixedSize&quot;)
+videoPlayerHeight:420,                       //fixed total player height (only for playerLayout: &quot;fixedSize&quot;)
+videoRatio: 16/9,                            //set your video ratio (calculate video width/video height)
+videoRatioStretch: false,                    //adjust video ratio for case when playlist is &quot;opened&quot; : true/false
+iOSPlaysinline: true,                        //on iOS device: play videos inline (like on desktop) or in Fullscreen by default: true/false
+floatPlayerOutsideViewport: false,           //show Sticky player if video player is not in viewport when scrolling through page
+lightBox:false,                              //lightbox mode :true/false
+lightBoxAutoplay: false,                     //autoplay video when lightbox opens: true/false
+lightBoxThumbnail:&quot;images/preview_images/poster.jpg&quot;, //lightbox thumbnail image
+lightBoxThumbnailWidth: 400,                 //lightbox thumbnail image width
+lightBoxThumbnailHeight: 220,                //lightbox thumbnail image height
+lightBoxCloseOnOutsideClick: true,           //close lightbox when clicked outside of player area
+playlist:&quot;Right playlist&quot;,                   //choose playlist type: &quot;Right playlist&quot;, &quot;Bottom playlist&quot;, &quot;Off&quot;
+playlistScrollType:&quot;light&quot;,                  //choose scrollbar type: &quot;light&quot;,&quot;minimal&quot;,&quot;light-2&quot;,&quot;light-3&quot;,&quot;light-thick&quot;,&quot;light-thin&quot;,&quot;inset&quot;,&quot;inset-2&quot;,&quot;inset-3&quot;,&quot;rounded&quot;,&quot;rounded-dots&quot;,&quot;3d&quot;,&quot;dark&quot;,&quot;minimal-dark&quot;,&quot;dark-2&quot;,&quot;dark-3&quot;,&quot;dark-thick&quot;,&quot;dark-thin&quot;,&quot;inset-dark&quot;,&quot;inset-2-dark&quot;,&quot;inset-3-dark&quot;,&quot;rounded-dark&quot;,&quot;rounded-dots-dark&quot;,&quot;3d-dark&quot;,&quot;3d-thick-dark&quot;
+playlistBehaviourOnPageload:&quot;opened (default)&quot;,//choose playlist behaviour when webpage loads: &quot;closed&quot;, &quot;opened (default)&quot; (not apply to Vimeo player)
+autoplay:false,                              //autoplay when webpage loads: true/false
+colorAccent:&quot;#cc181e&quot;,                       //plugin colors accent (hexadecimal or RGB value - http://www.colorpicker.com/)
+vimeoColor:&quot;00adef&quot;,                         //set &quot;hexadecimal value&quot;, default vimeo color is &quot;00adef&quot;
+youtubeControls:&quot;custom controls&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span>          //choose youtube player controls: &quot;custom controls&quot;, &quot;default controls&quot;
+youtubeSkin:&quot;dark&quot;,                          //default youtube controls theme: light, dark
+youtubeColor:&quot;red&quot;,                          //default youtube controls bar color: red, white
+youtubeQuality:&quot;default&quot;,                    //choose youtube quality: &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;, &quot;hd720&quot;, &quot;hd1080&quot;, &quot;highres&quot;, &quot;default&quot;
+youtubeShowRelatedVideos:&quot;Yes&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span>             //choose to show youtube related videos when video finish: &quot;Yes&quot;, &quot;No&quot; (onFinish:&quot;Stop video&quot; needs to be enabled)
+videoPlayerShadow:&quot;effect1&quot;,                 //choose player shadow:  &quot;effect1&quot; , &quot;effect2&quot;, &quot;effect3&quot;, &quot;effect4&quot;, &quot;effect5&quot;, &quot;effect6&quot;, &quot;off&quot;
+loadRandomVideoOnStart:&quot;No&quot;,                 //choose to load random video when webpage loads: &quot;Yes&quot;, &quot;No&quot;
+shuffle:&quot;No&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span>                               //choose to shuffle videos when playing one after another: &quot;Yes&quot;, &quot;No&quot; (shuffle button enabled/disabled on start)
+posterImg:&quot;images/preview_images/poster.jpg&quot;,//player poster image
+posterImgOnVideoFinish:&quot;images/preview_images/poster2.jpg&quot;,//player poster image on video finish (if enabled onFinish:&quot;Stop video&quot;)
+onFinish:&quot;Play next video&quot;,                  //&quot;Play next video&quot;,&quot;Restart video&quot;, &quot;Stop video&quot;,
+nowPlayingText:&quot;Yes&quot;,                        //enable disable now playing title: &quot;Yes&quot;,&quot;No&quot;
+fullscreen:&quot;Fullscreen native&quot;,              //choose fullscreen type: &quot;Fullscreen native&quot;,&quot;Fullscreen browser&quot;
+preloadSelfHosted:&quot;none&quot;,                    //choose preload buffer for self hosted mp4 videos (video type HTML5): &quot;none&quot;, &quot;auto&quot;
+rightClickMenu:true,                         //enable/disable right click over HTML5 player: true/false
+hideVideoSource:false,<span class="Apple-tab-span" style="white-space: pre;"> </span>                      //option to hide self hosted video sources (to prevent users from download/steal your videos): true/false
+showAllControls:true,<span class="Apple-tab-span" style="white-space: pre;"> </span>                       //enable/disable all HTML5 player controls: true/false
+allowSkipAd:true,                            //enable/disable &quot;Skip advertisement&quot; option: true/false
+infoShow:&quot;Yes&quot;,                              //enable/disable info option: &quot;Yes&quot;,&quot;No&quot;
+shareShow:&quot;Yes&quot;,                             //enable/disable all share options: &quot;Yes&quot;,&quot;No&quot;
+facebookShow:&quot;Yes&quot;,                          //enable/disable facebook option individually: &quot;Yes&quot;,&quot;No&quot;
+twitterShow:&quot;Yes&quot;,                           //enable/disable twitter option individually: &quot;Yes&quot;,&quot;No&quot;
+mailShow:&quot;Yes&quot;,                              //enable/disable mail option individually: &quot;Yes&quot;,&quot;No&quot;
+facebookShareName:&quot;Elite video player&quot;,      //first parametar of facebook share in facebook feed dialog is title
+facebookShareLink:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;,  //second parametar of facebook share in facebook feed dialog is link below title
+facebookShareDescription:&quot;Elite Video Player is stunning, modern, responsive, fully customisable high-end video player for WordPress that support advertising and the most popular video platforms like YouTube, Vimeo or self-hosting videos (mp4).&quot;, //third parametar of facebook share in facebook feed dialog is description below link
+facebookSharePicture:&quot;https://0.s3.envato.com/files/123866118/preview.jpg&quot;, //fourth parametar in facebook feed dialog is picture on left side
+twitterText:&quot;Elite video player&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span>           //first parametar of twitter share in twitter feed dialog is text
+twitterLink:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;, //second parametar of twitter share in twitter feed dialog is link
+twitterHashtags:&quot;wordpressvideoplayer&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span>     //third parametar of twitter share in twitter feed dialog is hashtag
+twitterVia:&quot;Creative media&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span> //fourth parametar of twitter share in twitter feed dialog is via (@)
+googlePlus:&quot;http://codecanyon.net/item/elite-video-player-wordpress-plugin/10496434&quot;, //share link over Google +
+logoShow:&quot;Yes&quot;,                              //&quot;Yes&quot;,&quot;No&quot;
+logoClickable:&quot;Yes&quot;,                         //&quot;Yes&quot;,&quot;No&quot;
+logoPath:&quot;images/logo/logo.png&quot;,             //path to logo image
+logoGoToLink:&quot;http://codecanyon.net/&quot;,       //redirect to page when logo clicked
+logoPosition:&quot;bottom-left&quot;,                  //choose logo position: &quot;bottom-right&quot;,&quot;bottom-left&quot;
+embedShow:&quot;Yes&quot;,                             //enable/disable embed option: &quot;Yes&quot;,&quot;No&quot;
+embedCodeSrc:&quot;www.yourwebsite.com/videoplayer/index.html&quot;, //path to your video player on server
+embedCodeW:&quot;746&quot;,                            //embed player code width
+embedCodeH:&quot;420&quot;,                            //embed player code height
+embedShareLink:&quot;www.yourwebsite.com/videoplayer/index.html&quot;, //direct link to your site (or any other URL) you want to be &quot;shared&quot;
+showGlobalPrerollAds: false,                 //enable/disable &#39;global&#39; ads and overwrite each individual ad in &#39;videos&#39; :true/false
+globalPrerollAds: &quot;url1;url2;url3;url4;url5&quot;,//set &#39;pool&#39; of url&#39;s that are separated by ; (global prerolls will play randomly)
+globalPrerollAdsSkipTimer: 5,                //skip global advertisement seconds
+globalPrerollAdsGotoLink: &quot;http://codecanyon.net/&quot;,//global advertisement goto link
+<span style="font-size: 12px;">advertisementTitle:&quot;Advertisement&quot;,          //translate &quot;Advertisement&quot; title to your language</span>
+<span style="font-size: 12px;">skipAdvertisementText:&quot;Skip advertisement&quot;,  //translate &quot;Skip advertisement&quot; button to your language</span>
+<span style="font-size: 12px;">skipAdText:&quot;You can skip this ad in&quot;,        //translate &quot;You can skip this ad in&quot; counter to your language</span>
+playBtnTooltipTxt:&quot;Play&quot;,                    //translate &quot;Play&quot; to your language
+pauseBtnTooltipTxt:&quot;Pause&quot;,                  //translate &quot;Pause&quot; to your language
+rewindBtnTooltipTxt:&quot;Rewind&quot;,                //translate &quot;Rewind&quot; to your language
+downloadVideoBtnTooltipTxt:&quot;Download video&quot;, //translate &quot;Download video&quot; to your language
+qualityBtnOpenedTooltipTxt:&quot;Close settings&quot;, //translate &quot;Close settings&quot; to your language
+qualityBtnClosedTooltipTxt:&quot;Settings&quot;,       //translate &quot;Settings&quot; to your language
+muteBtnTooltipTxt:&quot;Mute&quot;,                    //translate &quot;Mute&quot; to your language
+unmuteBtnTooltipTxt:&quot;Unmute&quot;,                //translate &quot;Unmute&quot; to your language
+fullscreenBtnTooltipTxt:&quot;Fullscreen&quot;,        //translate &quot;Fullscreen&quot; to your language
+exitFullscreenBtnTooltipTxt:&quot;Exit fullscreen&quot;,//translate &quot;Exit fullscreen&quot; to your language
+infoBtnTooltipTxt:&quot;Show info&quot;,<span class="Apple-tab-span" style="white-space: pre;"> </span> //translate &quot;Show info&quot; to your language
+embedBtnTooltipTxt:&quot;Embed&quot;,                  //translate &quot;Embed&quot; to your language
+shareBtnTooltipTxt:&quot;Share&quot;,                  //translate &quot;Share&quot; to your language
+volumeTooltipTxt:&quot;Volume&quot;,                   //translate &quot;Volume&quot; to your language
+playlistBtnClosedTooltipTxt:&quot;Show playlist&quot;, //translate &quot;Show playlist&quot; to your language
+playlistBtnOpenedTooltipTxt:&quot;Hide playlist&quot;, //translate &quot;Exit fullscreen&quot; to your language
+facebookBtnTooltipTxt:&quot;Share on Facebook&quot;,   //translate &quot;Share on Facebook&quot; to your language
+twitterBtnTooltipTxt:&quot;Share on Twitter&quot;,     //translate &quot;Share on Twitter&quot; to your language
+googlePlusBtnTooltipTxt:&quot;Share on Google+&quot;,  //translate &quot;Share on Google+&quot; to your language
+lastBtnTooltipTxt:&quot;Go to last video&quot;,        //translate &quot;Go to last video&quot; to your language
+firstBtnTooltipTxt:&quot;Go to first video&quot;,      //translate &quot;Go to first video&quot; to your language
+nextBtnTooltipTxt:&quot;Play next video&quot;,         //translate &quot;Play next video&quot; to your language
+previousBtnTooltipTxt:&quot;Play previous video&quot;, //translate &quot;Play previous video&quot; to your language
+shuffleBtnOnTooltipTxt:&quot;Shuffle on&quot;,         //translate &quot;Shuffle on&quot; to your language
+shuffleBtnOffTooltipTxt:&quot;Shuffle off&quot;,       //translate &quot;Shuffle off&quot; to your language
+nowPlayingTooltipTxt:&quot;NOW PLAYING&quot;,          //translate &quot;NOW PLAYING&quot; to your language
+embedWindowTitle1:&quot;SHARE THIS PLAYER:&quot;,      //translate &quot;SHARE THIS PLAYER:&quot; to your language
+embedWindowTitle2:&quot;EMBED THIS VIDEO IN YOUR SITE:&quot;,//translate &quot;EMBED THIS VIDEO IN YOUR SITE:&quot; to your language
+embedWindowTitle3:&quot;SHARE LINK TO THIS PLAYER:&quot;,//translate &quot;SHARE LINK TO THIS PLAYER:&quot; to your language
+youtubePlaylistID:&quot;&quot;,                        //automatic youtube playlist ID (leave blank &quot;&quot; if you want to use manual playlist) LL4qbSRobYCjvwo4FCQFrJ4g
+youtubeChannelID:&quot;&quot;,                         //automatic youtube channel ID (leave blank &quot;&quot; if you want to use manual playlist) UCHqaLr9a9M7g9QN6xem9HcQ
+
+//manual playlist
+videos:[
+{
+videoType:&quot;youtube&quot;,                                                              //choose video type: &quot;HTML5&quot;, &quot;youtube&quot;, &quot;vimeo&quot;, &quot;image&quot;
+title:&quot;Youtube video&quot;,                                                            //video title
+youtubeID:&quot;0dJO0HyE8xE&quot;,                                                          //last part if the URL https://www.youtube.com/watch?v=0dJO0HyE8xE
+vimeoID:&quot;119641053&quot;,                                                              //last part of the URL http://vimeo.com/119641053
+mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;,               //HTML5 video mp4 url
+enable_mp4_download:&quot;no&quot;,                                                         //enable download button for self hosted videos: &quot;yes&quot;,&quot;no&quot;
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;,                                     //display image instead of playing video
+imageTimer:4, <span class="Apple-tab-span" style="white-space: pre;"> </span>  //set time how long image will display
+prerollAD:&quot;no&quot;,                                                                   //show pre-roll &quot;yes&quot;,&quot;no&quot;
+prerollGotoLink:&quot;http://codecanyon.net/&quot;,                                         //pre-roll goto link
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,   //pre-roll video mp4 format
+prerollSkipTimer:5,
+midrollAD:&quot;no&quot;,                                                                   //show mid-roll &quot;yes&quot;,&quot;no&quot;
+midrollAD_displayTime:&quot;00:10&quot;,                                                    //show mid-roll at any custom time in format &quot;minutes:seconds&quot; (&quot;00:00&quot;)
+midrollGotoLink:&quot;http://codecanyon.net/&quot;,                                         //mid-roll goto link
+midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;, //mid-roll video mp4 format
+midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span>
+postrollAD:&quot;no&quot;,                                                                  //show post-roll &quot;yes&quot;,&quot;no&quot;
+postrollGotoLink:&quot;http://codecanyon.net/&quot;,                                        //post-roll goto link
+postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,  //post-roll video mp4 format
+postrollSkipTimer:5,
+popupImg:&quot;images/preview_images/popup.jpg&quot;,                        <span class="Apple-tab-span" style="white-space: pre;"> </span>  <span class="Apple-tab-span" style="white-space: pre;"> </span>           //popup image URL
+popupAdShow:&quot;no&quot;,                                                                 //enable/disable popup image: &quot;yes&quot;,&quot;no&quot;
+popupAdStartTime:&quot;00:03&quot;,                                                         //time to show popup ad during playback
+popupAdEndTime:&quot;00:07&quot;,                                                           //time to hide popup ad during playback
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                                         //re-direct to URL when popup ad clicked
+description:&quot;Video description goes here.&quot;,                                       //video description
+thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,                                      //set &quot;auto&quot; or leave blank &quot;&quot; to grab it automatically from youtube, or set path to playlist thumbnail image
+info:&quot;Video info goes here.&lt;br&gt;This text can be &lt;i&gt;HTML formatted&lt;/i&gt;, &lt;a href=&#39;http://codecanyon.net/user/_zac_&#39; target=&#39;_blank&#39;&gt;&lt;font color=&#39;008BFF&#39;&gt;find out more&lt;/font&gt;&lt;/a&gt;.&lt;br&gt;You can disable this info window in player options. &lt;br&gt;&lt;br&gt;Lorem ipsum dolor sit amet, eu pri dolores theophrastus. Posidonium vituperatoribus cu mel, cum feugiat nostrum sapientem ne. Vis ea summo persius, unum velit erant in eos, pri ut suas iriure euripidis. Ad augue expetendis sea. Ne usu saperet appetere honestatis, ne qui nulla debitis sententiae.&quot;                                                                                    //video info
+},
+{
+videoType:&quot;vimeo&quot;,
+title:&quot;Vimeo vimeo&quot;,
+youtubeID:&quot;0dJO0HyE8xE&quot;,
+vimeoID:&quot;119641053&quot;,
+mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;,
+enable_mp4_download:&quot;no&quot;,
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;,
+imageTimer:4,
+prerollAD:&quot;no&quot;,
+prerollGotoLink:&quot;http://codecanyon.net/&quot;,
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,
+prerollSkipTimer:5,
+midrollAD:&quot;no&quot;,                                                      
+midrollAD_displayTime:&quot;00:10&quot;,                                        
+midrollGotoLink:&quot;http://codecanyon.net/&quot;,                             
+midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,
+midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space:pre"> </span>
+postrollAD:&quot;no&quot;,                                                    
+postrollGotoLink:&quot;http://codecanyon.net/&quot;,                            
+postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,
+postrollSkipTimer:5,
+popupImg:&quot;images/preview_images/popup.jpg&quot;,                        <span class="Apple-tab-span" style="white-space:pre"> </span>
+popupAdShow:&quot;no&quot;,                                                    
+popupAdStartTime:&quot;00:03&quot;,                                             
+popupAdEndTime:&quot;00:07&quot;,                                              
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                             
+description:&quot;Video description goes here.&quot;,
+thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,
+info:&quot;Video info goes here.&lt;br&gt;This text can be &lt;i&gt;HTML formatted&lt;/i&gt;, &lt;a href=&#39;http://codecanyon.net/user/_zac_&#39; target=&#39;_blank&#39;&gt;&lt;font color=&#39;008BFF&#39;&gt;find out more&lt;/font&gt;&lt;/a&gt;.&lt;br&gt;You can disable this info window in player options. &lt;br&gt;&lt;br&gt;Lorem ipsum dolor sit amet, eu pri dolores theophrastus. Posidonium vituperatoribus cu mel, cum feugiat nostrum sapientem ne. Vis ea summo persius, unum velit erant in eos, pri ut suas iriure euripidis. Ad augue expetendis sea. Ne usu saperet appetere honestatis, ne qui nulla debitis sententiae.&quot;
+},
+<span style="font-size: 12px;">{</span>
+<span style="font-size: 12px;">videoType:&quot;HTML5&quot;,</span>
+<span style="font-size: 12px;">title:&quot;HLS m3u8 video&quot;,</span>
+<span style="font-size: 12px;">youtubeID:&quot;0dJO0HyE8xE&quot;,</span>
+<span style="font-size: 12px;">vimeoID:&quot;119641053&quot;,</span>
+<span style="font-size: 12px;">mp4:&quot;</span><span style="font-size: 12px;">http://www.streambox.fr/playlists/x31e0e7/x31e0e7.m3u8</span><span style="font-size: 12px;">&quot;,</span>
+<span style="font-size: 12px;">enable_mp4_download:&quot;no&quot;,</span>
+<span style="font-size: 12px;">imageUrl:&quot;images/preview_images/poster2.jpg&quot;,</span>
+<span style="font-size: 12px;">imageTimer:4,</span>
+<span style="font-size: 12px;">prerollAD:&quot;no&quot;,</span>
+<span style="font-size: 12px;">prerollGotoLink:&quot;http://codecanyon.net/&quot;,</span>
+<span style="font-size: 12px;">preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,</span>
+<span style="font-size: 12px;">prerollSkipTimer:5,</span>
+<span style="font-size: 12px;">midrollAD:&quot;no&quot;,                                                              </span>
+<span style="font-size: 12px;">midrollAD_displayTime:&quot;00:10&quot;,                                                </span>
+<span style="font-size: 12px;">midrollGotoLink:&quot;http://codecanyon.net/&quot;,                                     </span>
+<span style="font-size: 12px;">midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,</span>
+<span style="font-size: 12px;">midrollSkipTimer:5,</span><span class="Apple-tab-span" style="font-size: 12px; white-space: pre;"> </span>
+<span style="font-size: 12px;">postrollAD:&quot;no&quot;,                                                            </span>
+<span style="font-size: 12px;">postrollGotoLink:&quot;http://codecanyon.net/&quot;,                                    </span>
+<span style="font-size: 12px;">postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,</span>
+<span style="font-size: 12px;">postrollSkipTimer:5,</span>
+<span style="font-size: 12px;">popupImg:&quot;images/preview_images/popup.jpg&quot;,                        </span><span class="Apple-tab-span" style="font-size: 12px; white-space: pre;"> </span>
+<span style="font-size: 12px;">popupAdShow:&quot;no&quot;,                                                            </span>
+<span style="font-size: 12px;">popupAdStartTime:&quot;00:03&quot;,                                                     </span>
+<span style="font-size: 12px;">popupAdEndTime:&quot;00:07&quot;,                                                      </span>
+<span style="font-size: 12px;">popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                                     </span>
+<span style="font-size: 12px;">description:&quot;Video description goes here.&quot;,</span>
+<span style="font-size: 12px;">thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,</span>
+<span style="font-size: 12px;">info:&quot;Video info goes here.&lt;br&gt;This text can be &lt;i&gt;HTML formatted&lt;/i&gt;, &lt;a href=&#39;http://codecanyon.net/user/_zac_&#39; target=&#39;_blank&#39;&gt;&lt;font color=&#39;008BFF&#39;&gt;find out more&lt;/font&gt;&lt;/a&gt;.&lt;br&gt;You can disable this info window in player options. &lt;br&gt;&lt;br&gt;Lorem ipsum dolor sit amet, eu pri dolores theophrastus. Posidonium vituperatoribus cu mel, cum feugiat nostrum sapientem ne. Vis ea summo persius, unum velit erant in eos, pri ut suas iriure euripidis. Ad augue expetendis sea. Ne usu saperet appetere honestatis, ne qui nulla debitis sententiae.&quot;</span>
+<span style="font-size: 12px;">},</span>
+{
+videoType:&quot;HTML5&quot;,
+title:&quot;Self hosted video&quot;,
+youtubeID:&quot;0dJO0HyE8xE&quot;,
+vimeoID:&quot;119641053&quot;,
+mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;,
+enable_mp4_download:&quot;no&quot;,
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;,
+imageTimer:4,
+prerollAD:&quot;no&quot;,
+prerollGotoLink:&quot;http://codecanyon.net/&quot;,
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,
+prerollSkipTimer:5,
+midrollAD:&quot;no&quot;,                                                       
+midrollAD_displayTime:&quot;00:10&quot;,                                         
+midrollGotoLink:&quot;http://codecanyon.net/&quot;,                              
+midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,
+midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span>
+postrollAD:&quot;no&quot;,                                                     
+postrollGotoLink:&quot;http://codecanyon.net/&quot;,                             
+postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,
+postrollSkipTimer:5,
+popupImg:&quot;images/preview_images/popup.jpg&quot;,                        <span class="Apple-tab-span" style="white-space: pre;"> </span>
+popupAdShow:&quot;no&quot;,                                                     
+popupAdStartTime:&quot;00:03&quot;,                                              
+popupAdEndTime:&quot;00:07&quot;,                                               
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                              
+description:&quot;Video description goes here.&quot;,
+thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,
+info:&quot;Video info goes here.&lt;br&gt;This text can be &lt;i&gt;HTML formatted&lt;/i&gt;, &lt;a href=&#39;http://codecanyon.net/user/_zac_&#39; target=&#39;_blank&#39;&gt;&lt;font color=&#39;008BFF&#39;&gt;find out more&lt;/font&gt;&lt;/a&gt;.&lt;br&gt;You can disable this info window in player options. &lt;br&gt;&lt;br&gt;Lorem ipsum dolor sit amet, eu pri dolores theophrastus. Posidonium vituperatoribus cu mel, cum feugiat nostrum sapientem ne. Vis ea summo persius, unum velit erant in eos, pri ut suas iriure euripidis. Ad augue expetendis sea. Ne usu saperet appetere honestatis, ne qui nulla debitis sententiae.&quot;
+}
+]
+});
+});
+&lt;/script&gt;</pre>
+<ul>	<li>		Next step, in your web document, insert the following line of code where you want to video player appear in between <strong>&lt;body&gt;......</strong> <strong>&lt;body&gt;</strong></li>
+</ul>
+<pre class="prettyprint lang-html linenums">
+<span style="line-height: 19px;">&lt;div id=&quot;Elite_video_player&quot;&gt;&lt;/div&gt;</span></pre>
+<p>	<em>A webpage should only load one instance of jQuery. Loading more then one instance of the jQuery library can cause conflicts.&nbsp;</em></p>
+<p>	&nbsp;</p>
+</section>
+<section id="google_analytics">
+	<div class="page-header"><h3>Google Analytics</h3><hr class="notop"></div>
+<div>
+	With Google Analytics you can track Elite video player events:</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Main video watched (ended)</div>
+<div>
+	- Main video downloaded</div>
+<div>
+	- AD video watched (ended)</div>
+<div>
+	- AD video clicked</div>
+<div>
+	- AD video skipped after x seconds</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	1. first create Google account</div>
+<div>
+	&nbsp;</div>
+<div>
+	2. once you have Google account go here:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<a href="https://marketingplatform.google.com/about/analytics/">https://marketingplatform.google.com/about/analytics/</a></div>
+<div>
+	&nbsp;</div>
+<div>
+	to setup new Google Analytics account.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Click &quot;Start For Free&quot; and fill out the informations.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<img alt="" src="assets/images/image_1.png"></div>
+<div>
+	<img alt="" src="assets/images/image_2.png" style="width: 1920px; height: 1094px;"></div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		3. once you created Google Analytics account go to Analytics Home page</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<a href="https://analytics.google.com/analytics/web/#/report-home/">https://analytics.google.com/analytics/web/#/report-home/</a></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		and click ADMIN tab in bottom left corner.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<img alt="" src="assets/images/image_3.png" style="width: 1920px; height: 1045px;"></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<div>
+			4. Find &quot;Tracking Info&quot; and click &quot;Tracking code&quot;.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			copy code UA-87467628-3</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			and paste it into player options:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			googleAnalyticsTrackingCode: &quot;UA-87467628-3&quot;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<img alt="" src="assets/images/image_4.png" style="width: 1920px; height: 1045px;"></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				5. Than in left menu click &quot;REAL TIME&quot; -&gt; &quot;Events&quot; -&gt; &quot;Events(last 30min)&quot;</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				so you can track video player events in real time.</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<img alt="" src="assets/images/image_5.png" style="width: 1920px; height: 1045px;"></div>
+		</div>
+	</div>
+</div>
+<p>
+	&nbsp;</p>
+<div>
+	Here you can track Elite video player events:</div>
+<div>
+	&nbsp;</div>
+<div>
+	- Main video watched (ended)</div>
+<div>
+	- Main video downloaded</div>
+<div>
+	- AD video watched (ended)</div>
+<div>
+	- AD video clicked</div>
+<div>
+	- AD video skipped after x seconds</div>
+</section>
+<section id="youtube_playlist">
+	<div class="page-header"><h3>YouTube playlist</h3><hr class="notop"></div>
+<div>
+	To add videos from youtube playlist find option&nbsp;<strong><em>youtubePlaylistD</em></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		and insert youtube playlist ID from youtube URL, for example:</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		URL:&nbsp;<a href="https://www.youtube.com/watch?v=avwA2KPUHWc&amp;list=LL4qbSRobYCjvwo4FCQFrJ4g">https://www.youtube.com/watch?v=avwA2KPUHWc&amp;list=LL4qbSRobYCjvwo4FCQFrJ4g</a></div>
+	<div>
+		&nbsp;</div>
+</div>
+<pre class="prettyprint lang-html linenums">
+youtubePlaylistID: &quot;<strong>LL4qbSRobYCjvwo4FCQFrJ4g </strong>&quot; </pre>
+<div>
+	&nbsp;</div>
+</section>
+<section id="youtube_user_channel">
+	<div class="page-header"><h3>YouTube user channel</h3><hr class="notop"></div>
+<div>
+	To add videos from youtube user channel find option&nbsp;<strong><em>youtubeChannelID</em></strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	and insert channel ID from youtube URL, for example:</div>
+<div>
+	&nbsp;</div>
+<div>
+	URL:&nbsp;<a href="https://www.youtube.com/channel/UCHqaLr9a9M7g9QN6xem9HcQ">https://www.youtube.com/channel/UCHqaLr9a9M7g9QN6xem9HcQ</a></div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+youtubeChannelID: &quot;<strong>UCHqaLr9a9M7g9QN6xem9HcQ</strong>&quot; </pre>
+<div>
+	&nbsp;</div>
+<div>
+	or</div>
+<div>
+	&nbsp;</div>
+<div>
+	URL:&nbsp;<a href="https://www.youtube.com/user/djolepiv">https://www.youtube.com/user/djolepiv</a></div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+youtubeChannelID: &quot;<strong>djolepiv</strong>&quot; </pre>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Videos will be added by published date so first video in your player will be latest video uploaded on your channel.</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="adding_videos_to_playlist_manually">
+	<div class="page-header"><h3>Adding videos to playlist (manually)</h3><hr class="notop"></div>
+<div>
+	You can add videos manually one by one to your playlist.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You will need to set videoType for each video you add.</div>
+<div>
+	&nbsp;</div>
+<div>
+	for HTML5 self-hosted video (from your own server, or, amazon s3, google drive, HLS m3u8, local mp4 videos, dropbox videos):</div>
+<pre class="prettyprint lang-html linenums">
+videoType:&quot;HTML5&quot;</pre>
+<pre class="prettyprint lang-html linenums">
+mp4:&quot;http://player.pageflip.com.hr/videos/Pieces.mp4&quot;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	for youtube video:</div>
+<div>
+	&nbsp;</div>
+<div>
+	URL: https://www.youtube.com/watch?v=LfTLc5JGFPc</div>
+<pre class="prettyprint lang-html linenums">
+videoType:&quot;youtube&quot;</pre>
+<pre class="prettyprint lang-html linenums">
+youtubeID:&quot;LfTLc5JGFPc&quot;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	for vimeo video:</div>
+<div>
+	&nbsp;</div>
+<div>
+	URL: http://vimeo.com/32707724</div>
+<pre class="prettyprint lang-html linenums">
+videoType:&quot;vimeo&quot;</pre>
+<pre class="prettyprint lang-html linenums">
+vimeoID:&quot;32707724&quot;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	for displaying image (instead of video):</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+videoType:&quot;image&quot;</pre>
+	<pre class="prettyprint lang-html linenums">
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;</pre>
+</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+imageTimer: 4</pre>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	To add more videos just write &quot; , &quot; and duplicate all between curly brackets like this:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+,
+{
+videoType:&quot;youtube&quot;,                                                             
+title:&quot;Youtube video&quot;,                                                           
+youtubeID:&quot;0dJO0HyE8xE&quot;,                                                         
+vimeoID:&quot;119641053&quot;,                                                              
+mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;,              
+enable_mp4_download:&quot;no&quot;,                                                        
+imageUrl:&quot;images/preview_images/poster2.jpg&quot;,                                    
+imageTimer:4, <span class="Apple-tab-span" style="white-space: pre;"> </span>  
+prerollAD:&quot;no&quot;,                                                                  
+prerollGotoLink:&quot;http://codecanyon.net/&quot;,                                         
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;,  
+prerollSkipTimer:5,
+midrollAD:&quot;no&quot;,                                                                   
+midrollAD_displayTime:&quot;00:10&quot;,                                                
+midrollGotoLink:&quot;http://codecanyon.net/&quot;,                                      
+midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;, 
+midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span>
+postrollAD:&quot;no&quot;,                                                               
+postrollGotoLink:&quot;http://codecanyon.net/&quot;,                                      
+postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;, 
+postrollSkipTimer:5,
+popupImg:&quot;images/preview_images/popup.jpg&quot;,                        <span class="Apple-tab-span" style="white-space: pre;"> </span>  <span class="Apple-tab-span" style="white-space: pre;"> </span>          
+popupAdShow:&quot;no&quot;,                                                              
+popupAdStartTime:&quot;00:03&quot;,                                                       
+popupAdEndTime:&quot;00:07&quot;,                                                         
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,                                      
+description:&quot;Video description goes here.&quot;,                                    
+thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;,                                   
+info:&quot;Video info goes here.&quot;                                                                             
+}</pre>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	and you have succesfully added another video to the playlist. You can have unlimited videos in the playlist.</div>
+</section>
+<section id="html5_self_hosted_video_formats_mp4">
+	<div class="page-header"><h3>HTML5 Self-hosted video formats (mp4)</h3><hr class="notop"></div>
+<p>	If you use self-hosted videos (videoType:&quot;HTML5&quot;),&nbsp;you will need to provide only mp4 format to make player work cross-browsers on all platforms (desktop and mobile phones/tablets).</p>
+<p>	To convert your video to <strong>mp4&nbsp;</strong>you can use this online <strong><a href="http://video.online-convert.com/convert-to-webm">converter</a>, </strong>or any other similar software.</p>
+<p>	&nbsp;</p>
+<p>	<img alt="" src="assets/images/image_7.jpg" style="width: 554px; height: 575px;"></p>
+</section>
+<section id="pre_roll_advertising">
+	<div class="page-header"><h3>Pre-roll advertising</h3><hr class="notop"></div>
+<p>	To use pre-roll videos as advertising simply enable pre-roll option for particular video and enter URL to your ad video from your server:</p>
+<pre class="prettyprint lang-html linenums">
+prerollAD:&quot;yes&quot;
+preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;</pre>
+<div>
+	{<br>
+	videoType:&quot;youtube&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	title:&quot;Youtube video&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	youtubeID:&quot;0dJO0HyE8xE&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	vimeoID:&quot;119641053&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	enable_mp4_download:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageUrl:&quot;images/preview_images/poster2.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageTimer:4,&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<br>
+	<strong>prerollAD:&quot;yes&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	prerollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;, &nbsp;<br>
+	prerollSkipTimer:5,</strong><br>
+	midrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	midrollAD_displayTime:&quot;00:10&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,&nbsp;<br>
+	midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span><br>
+	postrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	postrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,&nbsp;<br>
+	postrollSkipTimer:5,<br>
+	popupImg:&quot;images/preview_images/popup.jpg&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdShow:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	popupAdStartTime:&quot;00:03&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdEndTime:&quot;00:07&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdGoToLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	description:&quot;Video description goes here.&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	info:&quot;Video info goes here.&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	}</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can set to redirect URL when advertisement is clicked:</div>
+<pre class="prettyprint lang-html linenums">
+prerollGotoLink:&quot;http://codecanyon.net/&quot;</pre>
+<p>	Also you can have timer when to show &quot;skip advertisement&quot; option,</p>
+<p>	which can be set to any time you want (seconds):</p>
+<pre class="prettyprint lang-html linenums">
+prerollSkipTimer:5</pre>
+</section>
+<section id="mid_roll_advertising">
+	<div class="page-header"><h3>Mid-roll advertising</h3><hr class="notop"></div>
+<p>	To use mid-roll advertising simply enable mid-roll option for particular video and enter URL to your ad video from your server:</p>
+<pre class="prettyprint lang-html linenums">
+midrollAD:&quot;yes&quot;
+midroll_mp4:&quot;http://player.pageflip.com.hr/videos/Short_Elegant_Logo_Reveal.mp4&quot;</pre>
+<div>
+	{<br>
+	videoType:&quot;youtube&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	title:&quot;Youtube video&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	youtubeID:&quot;0dJO0HyE8xE&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	vimeoID:&quot;119641053&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	enable_mp4_download:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageUrl:&quot;images/preview_images/poster2.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageTimer:4,&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<br>
+	prerollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	prerollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;, &nbsp;<br>
+	prerollSkipTimer:5,<br>
+	<strong>midrollAD:&quot;yes&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	midrollAD_displayTime:&quot;00:10&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,&nbsp;</strong><br>
+	midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span><br>
+	postrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	postrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,&nbsp;<br>
+	postrollSkipTimer:5,<br>
+	popupImg:&quot;images/preview_images/popup.jpg&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdShow:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	popupAdStartTime:&quot;00:03&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdEndTime:&quot;00:07&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdGoToLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	description:&quot;Video description goes here.&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	info:&quot;Video info goes here.&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	}</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can set to redirect URL when advertisement is clicked:</div>
+<pre class="prettyprint lang-html linenums">
+midrollGotoLink:&quot;http://codecanyon.net/&quot;</pre>
+<div>
+	You can set when to show mid-roll video advertisement (in format <em>minutes:seconds</em>)&nbsp;:</div>
+<pre class="prettyprint lang-html linenums">
+midrollAD_displayTime:&quot;00:10&quot;,&nbsp;</pre>
+<p>	Also you can have timer when to show &quot;skip advertisement&quot; option,</p>
+<p>	which can be set to any time you want (seconds):</p>
+<pre class="prettyprint lang-html linenums">
+midrollSkipTimer:5</pre>
+</section>
+<section id="post_roll_advertising">
+	<div class="page-header"><h3>Post-Roll advertising</h3><hr class="notop"></div>
+<p>	To use post-roll advertising simply enable post-roll option for particular video and enter URL to your ad video from your server:</p>
+<pre class="prettyprint lang-html linenums">
+postrollAD:&quot;yes&quot;
+postroll_mp4:&quot;http://player.pageflip.com.hr/videos/Short_Elegant_Logo_Reveal.mp4&quot;</pre>
+<div>
+	{<br>
+	videoType:&quot;youtube&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	title:&quot;Youtube video&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	youtubeID:&quot;0dJO0HyE8xE&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	vimeoID:&quot;119641053&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	enable_mp4_download:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageUrl:&quot;images/preview_images/poster2.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageTimer:4,&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<br>
+	prerollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	prerollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;, &nbsp;<br>
+	prerollSkipTimer:5,<br>
+	midrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	midrollAD_displayTime:&quot;00:10&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,&nbsp;<br>
+	midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span><br>
+	<strong>postrollAD:&quot;yes&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	postrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,&nbsp;<br>
+	postrollSkipTimer:5,</strong><br>
+	popupImg:&quot;images/preview_images/popup.jpg&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdShow:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	popupAdStartTime:&quot;00:03&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdEndTime:&quot;00:07&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdGoToLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	description:&quot;Video description goes here.&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	info:&quot;Video info goes here.&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	}</div>
+<div>
+	&nbsp;</div>
+<div>
+	Post-roll advertisement will show at the end of the video.</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can set to redirect URL when advertisement is clicked:</div>
+<pre class="prettyprint lang-html linenums">
+postrollGotoLink:&quot;http://codecanyon.net/&quot;</pre>
+<p>	Also you can have timer when to show &quot;skip advertisement&quot; option,</p>
+<p>	which can be set to any time you want (seconds):</p>
+<pre class="prettyprint lang-html linenums">
+postrollSkipTimer:5</pre>
+</section>
+<section id="pop_up_advertising">
+	<div class="page-header"><h3>Pop-Up advertising</h3><hr class="notop"></div>
+<p>	To use pop-up advertising simply enable pop-up&nbsp;option for particular video and enter URL to your image ad from your server:</p>
+<pre class="prettyprint lang-html linenums">
+popupAdShow:&quot;yes&quot;
+popupImg:&quot;images/preview_images/popup.jpg&quot;</pre>
+<div>
+	{<br>
+	videoType:&quot;youtube&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	title:&quot;Youtube video&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	youtubeID:&quot;0dJO0HyE8xE&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	vimeoID:&quot;119641053&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	mp4:&quot;http://creativeinteractivemedia.com/player/videos/Pieces.mp4&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	enable_mp4_download:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageUrl:&quot;images/preview_images/poster2.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	imageTimer:4,&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<br>
+	prerollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	prerollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	preroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Short_Elegant_Logo_Reveal.mp4&quot;, &nbsp;<br>
+	prerollSkipTimer:5,<br>
+	midrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	midrollAD_displayTime:&quot;00:10&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	midroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Explode.mp4&quot;,&nbsp;<br>
+	midrollSkipTimer:5,<span class="Apple-tab-span" style="white-space: pre;"> </span><br>
+	postrollAD:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	postrollGotoLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	postroll_mp4:&quot;http://creativeinteractivemedia.com/player/videos/Logo_Light.mp4&quot;,&nbsp;<br>
+	postrollSkipTimer:5,<br>
+	<strong>popupImg:&quot;images/preview_images/popup.jpg&quot;,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp;&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdShow:&quot;no&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	popupAdStartTime:&quot;00:03&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdEndTime:&quot;00:07&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	popupAdGoToLink:&quot;http://codecanyon.net/&quot;, &nbsp; &nbsp; &nbsp; &nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	description:&quot;Video description goes here.&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br>
+	thumbImg:&quot;images/thumbnail_images/pic1.jpg&quot;, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	info:&quot;Video info goes here.&quot; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br>
+	}</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can set to redirect URL when pop-up is clicked:</div>
+<pre class="prettyprint lang-html linenums">
+popupAdGoToLink:&quot;http://codecanyon.net/&quot;,</pre>
+<div>
+	You can set when to show and hide pop-up image ad (in format&nbsp;<em>minutes:seconds</em>)&nbsp;:</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+ popupAdStartTime:&quot;00:03&quot;                                                        
+ popupAdEndTime:&quot;00:07&quot;      </pre>
+</div>
+<p>	&nbsp;</p>
+</section>
+<section id="customize_look">
+	<div class="page-header"><h3>Customize look</h3><hr class="notop"></div>
+<p>	You can customize look of your player by inserting any color as &quot;color accent&quot; option.&nbsp;</p>
+<p>	Color accent can be hexadecimal value (#cc181e) or rbg value ( rgb(204,24,30)).</p>
+<pre class="prettyprint lang-html linenums">
+colorAccent:&quot;#cc181e&quot;</pre>
+<p>	is equvalent to:</p>
+<pre class="prettyprint lang-html linenums">
+colorAccent:&quot;rgb(204, 24, 30)&quot;</pre>
+<p>	To choose color accent for your player you can use one of these online color pickers:</p>
+<p>	<a href="http://www.colorpicker.com/">http://www.colorpicker.com/&nbsp;</a></p>
+<p>	<a href="http://www.w3schools.com/tags/ref_colorpicker.asp">http://www.w3schools.com/tags/ref_colorpicker.asp</a></p>
+<p>	<a href="http://www.rapidtables.com/web/color/color-picker.htm">http://www.rapidtables.com/web/color/color-picker.htm</a></p>
+<p>	This tool can be useful if you want to match your website colors&nbsp;<a href="http://www.imagecolorpicker.com/">http://www.imagecolorpicker.com/</a></p>
+<p>	&nbsp;</p>
+<p>	<img alt="" src="assets/images/image_6.png" style="width: 623px; height: 345px;"></p>
+<p>	&nbsp;</p>
+<p>	Popular pre-built colors you can use:</p>
+<p>	<img alt="" src="assets/images/image_9.png" style="width: 438px; height: 550px;"></p>
+<p>	&nbsp;</p>
+<p>	To customize vimeo and youtube players separately use this options:</p>
+<pre class="prettyprint lang-html linenums">
+vimeoColor:&quot;00adef&quot;,                         //set &quot;hexadecimal value&quot;, default vimeo color is &quot;00adef&quot;
+
+youtubeSkin:&quot;dark&quot;,                          //youtube theme: light,dark
+
+youtubeColor:&quot;red&quot;,                          //youtube color: red, white</pre>
+<p>	&nbsp;</p>
+<p>	To customize playlist scrollbar set one of the pre-built scrollbar themes:</p>
+<pre class="prettyprint lang-html linenums">
+playlistScrollType:&quot;light&quot;,                  </pre>
+<p>	available scrollbar themes: &nbsp;</p>
+<p>	&quot;light&quot;,&quot;minimal&quot;,&quot;light-2&quot;,&quot;light-3&quot;,&quot;light-thick&quot;,&quot;light-thin&quot;,&quot;inset&quot;,&quot;inset-2&quot;,&quot;inset-3&quot;,&quot;rounded&quot;,&quot;rounded-dots&quot;,&quot;3d&quot;</p>
+<p>	<img alt="" src="assets/images/image_11.jpg" style="width: 680px; height: 400px;"></p>
+</section>
+<section id="multiple_instances_of_player">
+	<div class="page-header"><h3>Multiple instances of player</h3><hr class="notop"></div>
+<p>	You can have multiple players per page. Every player can have it&#39;s own settings. Add the following in your HTML document:</p>
+<p>	Example how to show 2 players in one page:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+ $(document).ready(function($)
+ {
+    videoPlayer = $(&quot;#Elite_video_player1&quot;).Video({
+    });
+    //add this for player 2
+    videoPlayer = $(&quot;#Elite_video_player2&quot;).Video({
+    });
+ });
+
+ &lt;/script&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;Elite_video_player1&quot;&gt;&lt;/div&gt;
+  //add this for player 2:
+  &lt;div id=&quot;Elite_video_player2&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;</pre>
+<p>	For each instance of the player you need to change option <em><strong>instanceName</strong></em>, for example:</p>
+<p>	first instance of the player:</p>
+<p>	<strong>instanceName:&quot;player1&quot;</strong></p>
+<p>	second instance of the player:</p>
+<p>	<strong>instanceName:&quot;player2&quot;</strong></p>
+<p>	Done! Now you should be able to see 2 player in your HTML page.</p>
+</section>
+<section id="special_notes">
+	<div class="page-header"><h3>Special notes</h3><hr class="notop"></div>
+<div>
+	<div>
+		<strong>Self-hosting video usage:</strong></div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Some servers don&#39;t have support for HTML5 video by default.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Although it may seems like the video player is refusing to play the video with your browsers. This is usually caused by the web server&rsquo;s inability to recognize these video formats and it has nothing to do with the HTML5 video player.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		The solution to these problems can be fixed by adding video MIME types to server. You need to edit the .htaccess file and add the following line to your .htaccess file:</div>
+	<div>
+		&nbsp;</div>
+	<pre class="prettyprint lang-html linenums">
+AddType video/mp4 .mp4</pre>
+</div>
+<div>
+	URL&#39;s to your self-hosted videos needs to be an absolute URL:</div>
+<div>
+	&nbsp;</div>
+<div>
+	Example:</div>
+<div>
+	http://server/video.mp4</div>
+<div>
+	&nbsp;</div>
+<p>	<strong>Vimeo usage:</strong></p>
+<p>	If you use vimeo player, you&rsquo;ll need to be running on a web server instead of opening the file directly in your browser. Flash and JS security restrictions will prevent the API from working when run locally.</p>
+</section>
+<section id="rate_the_item">
+	<div class="page-header"><h3>Rate the item</h3><hr class="notop"></div>
+<p>	If you like this product please give a rating on CodeCaynon:</p>
+<p>	<img alt="" src="assets/images/image_10.png" style="width: 1020px; height: 558px;"></p>
+</section>
+<section id="more_works_by_creativemedia">
+	<div class="page-header"><h3>More works by CreativeMedia</h3><hr class="notop"></div>
+<p>	<img alt="" src="assets/images/image_13.jpg"  ></p>
+<p>	<a href="https://codecanyon.net/user/_creativemedia_/portfolio">https://codecanyon.net/user/_creativemedia_/portfolio</a></p>
+</section>
+
+	</div>
+</body>
+</html>
